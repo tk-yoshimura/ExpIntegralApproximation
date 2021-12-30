@@ -116,5 +116,40 @@ namespace ExpIntegral {
                 return MultiPrecision<N>.NaN;
             }
         }
+
+        public static MultiPrecision<N> NegativeLimit<N>(MultiPrecision<N> x, int max_terms = 256) where N : struct, IConstant {
+            if (!(x <= 0)) {
+                throw new ArgumentOutOfRangeException(nameof(x));
+            }
+
+            MultiPrecision<N> s = 0;
+            MultiPrecision<N> v = -1 / x, v2 = v * v;
+            MultiPrecision<N> ds = -MultiPrecision<N>.Exp(x) * v;
+
+            long k = 0;
+
+            for (long conv_times = 0; k < max_terms && conv_times < 3; k++) {
+                if (ds.Exponent < s.Exponent - MultiPrecision<N>.Bits) {
+                    conv_times++;
+                }
+                else {
+                    conv_times = 0;
+                }
+
+                if ((2 * k + 1) * v >= 1) { 
+                    return MultiPrecision<N>.NaN;
+                }
+
+                s += ds * (1 - (2 * k + 1) * v);
+                ds *= v2 * (2 * k + 1) * (2 * k + 2);
+            }
+
+            if (k < max_terms) {
+                return s.Convert<N>();
+            }
+            else {
+                return MultiPrecision<N>.NaN;
+            }
+        }
     }
 }
