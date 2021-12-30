@@ -18,6 +18,12 @@
 
 ![expintegral5](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/expintegral5.svg)
 
+### Continued Fraction
+
+![expintegral6](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/expintegral6.svg)
+
+![expintegral7](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/expintegral7.svg)
+
 ## LogIntegral
 
 ### Definitions
