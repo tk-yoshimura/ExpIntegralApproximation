@@ -58,5 +58,5 @@
   F_{n}(x) &=& -x + \dfrac{n}{
           1 + \dfrac{n}{F_{n+1}(x)}
       } \\
-      &=& \frac{(n-x) F_{n+1}(x) - n x}{ F_{n+1}(x) + n }
+      &=& \frac{n F_{n+1}(x)}{ n + F_{n+1}(x) } -x 
 \end{eqnarray*}
