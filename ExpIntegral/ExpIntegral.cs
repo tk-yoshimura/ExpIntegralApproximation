@@ -151,5 +151,21 @@ namespace ExpIntegral {
                 return MultiPrecision<N>.NaN;
             }
         }
+
+        public static MultiPrecision<N> NegativeFraction<N>(MultiPrecision<N> x, int m = 256) where N : struct, IConstant {
+            if (!(x <= 0)) {
+                throw new ArgumentOutOfRangeException(nameof(x));
+            }
+
+            MultiPrecision<N> v = 1;
+
+            for (int n = m; n >= 1; n--) {
+                v = ((n - x) * v - n * x) / (v + n);
+            }
+
+            MultiPrecision<N> y = -MultiPrecision<N>.Exp(x) / v;
+
+            return y;
+        }
     }
 }

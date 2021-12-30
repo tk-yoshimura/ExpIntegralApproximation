@@ -4,6 +4,12 @@ using System;
 namespace ExpIntegral {
     internal class Program {
         static void Main(string[] args) {
+            for (MultiPrecision<Pow2.N8> x = -100; x < 0; x += 0.125d) {
+                MultiPrecision<Pow2.N8> y = ExpIntegral.NegativeFraction<Pow2.N8>(x, 64);
+
+                Console.WriteLine($"{x},{y}");
+            }
+
             for (MultiPrecision<Pow2.N4> x = -6400; x <= -100; x /= 2) {
                 MultiPrecision<Pow2.N4> y = ExpIntegral.NegativeLimit(x);
 
