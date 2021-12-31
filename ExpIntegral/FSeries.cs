@@ -1,7 +1,6 @@
 ﻿using MultiPrecision;
 using System;
 using System.Collections.Generic;
-using System.Numerics;
 
 namespace ExpIntegral {
     internal class FSeries<N> where N : struct, IConstant {

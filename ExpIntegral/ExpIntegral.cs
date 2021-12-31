@@ -10,7 +10,7 @@ namespace ExpIntegral {
             }
 
             MultiPrecision<M> x_ex = x.Convert<M>(), x2 = x_ex * x_ex;
-            
+
             MultiPrecision<M> s = MultiPrecision<M>.EulerGamma + MultiPrecision<M>.Log(x_ex);
             MultiPrecision<M> u = x_ex * MultiPrecision<M>.Exp(x_ex / 2);
 
@@ -49,7 +49,7 @@ namespace ExpIntegral {
             }
 
             MultiPrecision<M> x_ex = -x.Convert<M>(), x2 = x_ex * x_ex;
-            
+
             MultiPrecision<M> s = MultiPrecision<M>.EulerGamma + MultiPrecision<M>.Log(x_ex);
             MultiPrecision<M> u = -x_ex;
 
@@ -101,7 +101,7 @@ namespace ExpIntegral {
                     conv_times = 0;
                 }
 
-                if (x < k) { 
+                if (x < k) {
                     return MultiPrecision<N>.NaN;
                 }
 
@@ -136,7 +136,7 @@ namespace ExpIntegral {
                     conv_times = 0;
                 }
 
-                if ((2 * k + 1) * v >= 1) { 
+                if ((2 * k + 1) * v >= 1) {
                     return MultiPrecision<N>.NaN;
                 }
 
@@ -152,8 +152,8 @@ namespace ExpIntegral {
             }
         }
 
-        public static MultiPrecision<N> Fraction<N>(MultiPrecision<N> x, int m = 256) where N : struct, IConstant {
-            MultiPrecision<N> f = 1;
+        public static (MultiPrecision<N> y, MultiPrecision<N> f) Fraction<N>(MultiPrecision<N> x, int m = 256) where N : struct, IConstant {
+            MultiPrecision<N> f = -x;
 
             for (int n = m; n >= 1; n--) {
                 f = (n * f) / (n + f) - x;
@@ -161,7 +161,21 @@ namespace ExpIntegral {
 
             MultiPrecision<N> y = -MultiPrecision<N>.Exp(x) / f;
 
-            return y;
+            return (y, f);
+        }
+
+        public static (MultiPrecision<N> y, MultiPrecision<N> f, int m) FractionConvergence<N>(MultiPrecision<N> x, int max_m) where N : struct, IConstant {
+            MultiPrecision<N> value = MultiPrecision<N>.NaN;
+
+            for (int m = 1; m <= max_m; m++) {
+                (MultiPrecision<N> y, MultiPrecision<N> f) = Fraction(x, m);
+
+                if (MultiPrecision<N>.NearlyEqualBits(value, y, 1)) {
+                    return (y, f, m - 1);
+                }
+                value = y;
+            }
+            return (MultiPrecision<N>.NaN, MultiPrecision<N>.NaN, -1);
         }
     }
 }
