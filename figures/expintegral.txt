@@ -60,3 +60,7 @@
       } \\
       &=& \frac{n F_{n+1}(x)}{ n + F_{n+1}(x) } -x 
 \end{eqnarray*}
+
+\begin{eqnarray*}
+  g(x):=\frac{ \exp(x)}{\mathrm{Ei}(x)}
+\end{eqnarray*}

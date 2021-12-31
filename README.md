@@ -26,10 +26,15 @@
 
 ![expintegral7](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/expintegral7.svg)
 
-## Table
+### Table
 
 [NumericTable(128bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/ei_table_n4.csv)  
 [NumericTable(256bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/ei_table_n8.csv)  
+
+### Approximation
+
+![expintegral8](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/expintegral8.svg)  
+![expintegral9](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/expintegral9.svg)  
 
 ## LogIntegral
 
