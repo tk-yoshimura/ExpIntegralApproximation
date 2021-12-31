@@ -36,6 +36,9 @@
 ![expintegral8](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/expintegral8.svg)  
 ![expintegral9](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/expintegral9.svg)  
 
+[NumericTable(128bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/ei_g_n4.csv)  
+[NumericTable(256bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/ei_g_n8.csv)  
+
 ## LogIntegral
 
 ### Definitions
