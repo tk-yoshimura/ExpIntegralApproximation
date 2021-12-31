@@ -40,6 +40,10 @@
 [NumericTable(128bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/ei_g_n4.csv)  
 [NumericTable(256bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/ei_g_n8.csv)  
 
+![expintegral11](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/expintegral11.svg)  
+
+[NumericTable(256bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/ei_invg_n8.csv)  
+
 ## LogIntegral
 
 ### Definitions

@@ -5,25 +5,25 @@ using System.IO;
 namespace ExpIntegral {
     internal class Program {
         static void Main(string[] args) {
-            using (StreamWriter sw = new("../../../../results/ei_g_n8.csv")) {
-                sw.WriteLine("x,g");
+            using (StreamWriter sw = new("../../../../results/ei_invg_n8.csv")) {
+                sw.WriteLine("1/x,g(x)-x");
 
-                for (MultiPrecision<Pow2.N8> x = -128; x <= 196; x += 1d / 64) {
-                    MultiPrecision<Pow2.N8> y = ExpIntegralN8.G(x);
+                for (MultiPrecision<Pow2.N8> v = -1; v <= -1d / 1024; v += 1d / 1024) {
+                    MultiPrecision<Pow2.N8> x = 1 / v;
+                    MultiPrecision<Pow2.N8> y = ExpIntegralN8.G(x) - x;
 
-                    Console.WriteLine($"{x},{y}");
-                    sw.WriteLine($"{x},{y}");
+                    Console.WriteLine($"{v},{y}");
+                    sw.WriteLine($"{v},{y}");
                 }
-            }
 
-            using (StreamWriter sw = new("../../../../results/ei_g_n4.csv")) {
-                sw.WriteLine("x,g");
+                sw.WriteLine("0,-1");
 
-                for (MultiPrecision<Pow2.N4> x = -128; x <= 128; x += 1d / 64) {
-                    MultiPrecision<Pow2.N4> y = ExpIntegralN4.G(x);
+                for (MultiPrecision<Pow2.N8> v = 1d / 1024; v <= 1; v += 1d / 1024) {
+                    MultiPrecision<Pow2.N8> x = 1 / v;
+                    MultiPrecision<Pow2.N8> y = ExpIntegralN8.G(x) - x;
 
-                    Console.WriteLine($"{x},{y}");
-                    sw.WriteLine($"{x},{y}");
+                    Console.WriteLine($"{v},{y}");
+                    sw.WriteLine($"{v},{y}");
                 }
             }
 
