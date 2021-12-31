@@ -6,6 +6,8 @@
 
 ![expintegral1](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/expintegral1.svg)
 
+![expintegral0](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/expintegral0.svg)
+
 ### Series
 
 ![expintegral2](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/expintegral2.svg)
