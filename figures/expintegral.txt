@@ -64,3 +64,7 @@
 \begin{eqnarray*}
   g(x):=\frac{ \exp(x)}{\mathrm{Ei}(x)}
 \end{eqnarray*}
+
+\begin{eqnarray*}
+  \lim_{|x| \rightarrow \infty} g(x) - x = -1
+\end{eqnarray*}
