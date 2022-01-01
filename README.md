@@ -44,8 +44,6 @@
 
 [NumericTable(256bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/ei_invg_n8.csv)  
 
-[Laurent series of g(x)-x](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/gx_laurent.csv)  
-
 ## LogIntegral
 
 ### Definitions
