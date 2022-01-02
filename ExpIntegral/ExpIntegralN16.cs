@@ -21,10 +21,10 @@ namespace ExpIntegral {
 
         public static MultiPrecision<Pow2.N16> G(MultiPrecision<Pow2.N16> x) {
             if (x <= -32) {
-                return ExpIntegral.Fraction(x, m: 400).f;
+                return -ExpIntegral.Fraction(x, m: 400).f;
             }
             if (x > 400) {
-                return ExpIntegral.Fraction(x, m: 200).f;
+                return -ExpIntegral.Fraction(x, m: 200).f;
             }
 
             MultiPrecision<Pow2.N16> ei;
