@@ -41,6 +41,7 @@
 [NumericTable(256bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/ei_g_n8.csv)  
 
 ![expintegral11](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/expintegral11.svg)  
+x_peak = 0.182092216206015142199130590408338051206853980486453959525149750563927500105...  
 
 [NumericTable(256bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/ei_invg_n8.csv)  
 
