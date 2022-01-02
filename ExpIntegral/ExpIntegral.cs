@@ -4,7 +4,7 @@ using System;
 namespace ExpIntegral {
     internal static class ExpIntegral {
 
-        public static MultiPrecision<N> PositiveNearZero<N, M>(MultiPrecision<N> x, int max_terms = 256) where N : struct, IConstant where M : struct, IConstant {
+        public static MultiPrecision<N> PositiveNearZero<N, M>(MultiPrecision<N> x, int max_terms = 512) where N : struct, IConstant where M : struct, IConstant {
             if (!(x >= 0)) {
                 throw new ArgumentOutOfRangeException(nameof(x));
             }
