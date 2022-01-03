@@ -22,7 +22,7 @@ namespace ExpIntegral {
             if (x <= -32) {
                 return -ExpIntegral.Fraction(x, m: 90).f;
             }
-            if (x > 182) { 
+            if (x > 182) {
                 return -ExpIntegral.Fraction(x, m: 48).f;
             }
 
@@ -34,10 +34,10 @@ namespace ExpIntegral {
             else if (x <= 90) {
                 ei = ExpIntegral.PositiveNearZero<Pow2.N8, Pow2.N16>(x);
             }
-            else{
+            else {
                 ei = ExpIntegral.PositiveNearZero<Pow2.N8, Pow2.N32>(x);
             }
-            
+
             return MultiPrecision<Pow2.N8>.Exp(x) / ei;
         }
     }

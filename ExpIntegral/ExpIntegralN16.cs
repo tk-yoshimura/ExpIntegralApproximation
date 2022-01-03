@@ -35,7 +35,7 @@ namespace ExpIntegral {
             else if (x <= 350) {
                 ei = ExpIntegral.PositiveNearZero<Pow2.N16, Pow2.N32>(x);
             }
-            else{
+            else {
                 ei = ExpIntegral.PositiveNearZero<Pow2.N16, Pow2.N64>(x);
             }
             return MultiPrecision<Pow2.N16>.Exp(x) / ei;
