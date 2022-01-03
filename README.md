@@ -45,6 +45,8 @@ x_peak = 0.182092216206015142199130590408338051206853980486453959525149750563927
 
 [NumericTable(256bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/ei_invg_n8.csv)  
 
+[PadeApproxTable](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/ei_invg_pade_table_2.csv)  
+
 ## LogIntegral
 
 ### Definitions
