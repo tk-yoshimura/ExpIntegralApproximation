@@ -1,0 +1,55 @@
+\begin{eqnarray*}
+  \mathrm{Ci}(x)&=& - \int_{x}^{\infty} \frac{ \cos t }{t} dt 
+        = \gamma+\log(x) - \int_{0}^{x} \frac{1-\cos t}{t} dt
+\end{eqnarray*}
+
+\begin{eqnarray*}
+  \mathrm{Si}(x)&=& \int_{0}^{x} \frac{ \sin t }{t} dt \\
+  \mathrm{si}(x)&=& - \int_{x}^{\infty} \frac{ \sin t }{t} dt = \mathrm{Si}(x) - \frac{\pi}{2} \\
+\end{eqnarray*}
+
+\begin{eqnarray*}
+  \mathrm{Ci}(x)&=& \gamma + \log(x) + \sum_{n=1}^{\infty} \frac{(-1)^n x^{2n}}{2n (2n)!} \\
+       &=& \gamma + \log(x) - x^2 \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n}}{(2n+2) (2n+2)!} \\
+       &=& \gamma + \log(x) - x^2 \sum_{n=0}^{\infty} 
+           \left( \frac{x^{4n}}{(4n+2) (4n+2)!} - \frac{x^{4n+2}}{(4n+4) (4n+4)!} \right) \\
+       &=& \gamma + \log(x) - x^2 \sum_{n=0}^{\infty} \frac{x^{4 n}}{(4n+2)!}
+           \left( \frac{1}{(4n+2)} - \frac{x^2}{(4n+3)(4n+4)^2} \right) \\
+\end{eqnarray*}
+
+\begin{eqnarray*}
+  \mathrm{Si}(x)&=& \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{(2n+1) (2n+1)!} \\
+       &=& x \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n}}{(2n+1) (2n+1)!} \\
+       &=& x \sum_{n=0}^{\infty} 
+           \left( \frac{x^{4n}}{(4n+1) (4n+1)!} - \frac{x^{4n+2}}{(4n+3) (4n+3)!} \right) \\
+       &=& x \sum_{n=0}^{\infty} \frac{x^{4 n}}{(4n+1)!}
+           \left( \frac{1}{(4n+1)} - \frac{x^2}{(4n+2)(4n+3)^2} \right) \\
+\end{eqnarray*}
+
+\begin{eqnarray*}
+  \mathrm{si}(x)~=& -&\frac{\cos x}{x} \left( \sum_{n=0}^{\infty} \frac{(-1)^n (2n)!}{x^{2n}} \right)
+                    -\frac{\sin x}{x} \left( \sum_{n=0}^{\infty} \frac{(-1)^n (2n+1)!}{x^{2n+1}} \right) \\
+  \mathrm{Ci}(x)=&   &\frac{\sin x}{x} \left( \sum_{n=0}^{\infty} \frac{(-1)^n (2n)!}{x^{2n}} \right)
+                    -\frac{\cos x}{x} \left( \sum_{n=0}^{\infty} \frac{(-1)^n (2n+1)!}{x^{2n+1}} \right) \\
+\end{eqnarray*}
+
+\begin{eqnarray*}
+  \sum_{n=0}^{\infty} \frac{(-1)^n (2n)!}{x^{2n}} &=& \sum_{n=0}^{\infty} \left( \frac{(4n)!}{x^{4n}} - \frac{(4n+2)!}{x^{4n+2}} \right) \\
+                                                  &=& \sum_{n=0}^{\infty} \left( \frac{(4n)!}{x^{4n}} \left( 1 - \frac{(4n+1)(4n+2)}{x^2} \right) \right)
+\end{eqnarray*}
+
+\begin{eqnarray*}
+  \sum_{n=0}^{\infty} \frac{(-1)^n (2n+1)!}{x^{2n+1}} &=& \sum_{n=0}^{\infty} \left( \frac{(4n+1)!}{x^{4n+1}} - \frac{(4n+3)!}{x^{4n+3}} \right) \\
+                                                      &=& \sum_{n=0}^{\infty} \left( \frac{(4n+1)!}{x^{4n+1}} \left( 1 - \frac{(4n+2)(4n+3)}{x^2} \right) \right)
+\end{eqnarray*}
+
+\begin{eqnarray*}
+  \mathrm{si}(x)=-&&f(x) \cos (x)  -g(x) \sin(x) \\
+  \mathrm{Ci}(x)=~~~~ &&f(x) \sin (x)  -g(x) \cos(x) \\
+\end{eqnarray*}
+
+\begin{eqnarray*}
+  f(x)=~~~~&&\mathrm{Ci}(x) \sin(x) - \mathrm{si}(x) \cos(x) \\
+  g(x)=-&&\mathrm{Ci}(x) \cos(x) - \mathrm{si}(x) \sin(x) \\
+  f'(x) =&& -g(x),~~ g'(x)=f(x)-\frac{1}{x}
+\end{eqnarray*}  

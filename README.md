@@ -52,3 +52,25 @@ x_peak = 0.182092216206015142199130590408338051206853980486453959525149750563927
 ### Definitions
 
 ![logintegral1](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/logintegral1.svg)
+
+## SinIntegral, CosIntegral
+
+### Definitions
+
+![sinintegral1](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/sinintegral1.svg)
+
+![cosintegral1](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/cosintegral1.svg)
+
+### Series
+
+![sinintegral2](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/sinintegral2.svg)
+
+![cosintegral2](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/cosintegral2.svg)
+
+### Approximation
+
+![sincosintegral1](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/sincosintegral1.svg)  
+![sincosintegral2](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/sincosintegral2.svg)  
+![sincosintegral3](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/sincosintegral3.svg)  
+![sincosintegral4](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/sincosintegral4.svg)  
+![sincosintegral5](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/sincosintegral5.svg)  
