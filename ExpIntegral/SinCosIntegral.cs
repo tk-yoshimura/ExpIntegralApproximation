@@ -9,6 +9,10 @@ namespace ExpIntegral {
                 throw new ArgumentOutOfRangeException(nameof(x));
             }
 
+            if (x.IsZero) {
+                return MultiPrecision<N>.NegativeInfinity;
+            }
+
             MultiPrecision<M> x_ex = x.Convert<M>(), x2 = x_ex * x_ex, x4 = x2 * x2;
 
             MultiPrecision<M> s = MultiPrecision<M>.EulerGamma + MultiPrecision<M>.Log(x_ex);
@@ -49,6 +53,10 @@ namespace ExpIntegral {
                 throw new ArgumentOutOfRangeException(nameof(x));
             }
 
+            if (x.IsZero) {
+                return MultiPrecision<N>.Zero;
+            }
+
             MultiPrecision<M> x_ex = x.Convert<M>(), x2 = x_ex * x_ex, x4 = x2 * x2;
 
             MultiPrecision<M> s = 0;
@@ -71,7 +79,7 @@ namespace ExpIntegral {
                 s += ds;
                 u *= x4;
 
-                if (s.Exponent > MultiPrecision<M>.Bits - MultiPrecision<N>.Bits) {
+                if (s.IsNaN || s.Exponent > MultiPrecision<M>.Bits - MultiPrecision<N>.Bits) {
                     return MultiPrecision<N>.NaN;
                 }
             }
@@ -85,21 +93,21 @@ namespace ExpIntegral {
         }
 
 
-        public static (MultiPrecision<N> ci, MultiPrecision<N> si) Limit<N>(MultiPrecision<N> x, int max_terms = 256) where N : struct, IConstant {
+        public static (MultiPrecision<N> f, MultiPrecision<N> g) LimitFG<N>(MultiPrecision<N> x, int max_terms = 256) where N : struct, IConstant {
             if (!(x >= 0)) {
                 throw new ArgumentOutOfRangeException(nameof(x));
             }
 
             MultiPrecision<N> v = 1 / x, v2 = v * v, v4 = v2 * v2;
-            MultiPrecision<N> f = 1;
+            MultiPrecision<N> t = 1;
 
             MultiPrecision<N> p = 0, q = 0;
             MultiPrecision<N> c = 1, d = v;
-            
+
             long k = 0;
             for (; k < max_terms; k++) {
-                MultiPrecision<N> dp = f * c * (1 - checked((4 * k + 1) * (4 * k + 2)) * v2);
-                MultiPrecision<N> dq = f * (4 * k + 1) * d * (1 - checked((4 * k + 2) * (4 * k + 3)) * v2);
+                MultiPrecision<N> dp = t * c * (1 - checked((4 * k + 1) * (4 * k + 2)) * v2);
+                MultiPrecision<N> dq = t * (4 * k + 1) * d * (1 - checked((4 * k + 2) * (4 * k + 3)) * v2);
 
                 if (dp < 0 || dq < 0) {
                     return (MultiPrecision<N>.NaN, MultiPrecision<N>.NaN);
@@ -112,8 +120,8 @@ namespace ExpIntegral {
                 q += dq;
                 c *= v4;
                 d *= v4;
-                f *= (4 * k + 1) * (4 * k + 2);
-                f *= (4 * k + 3) * (4 * k + 4);
+                t *= (4 * k + 1) * (4 * k + 2);
+                t *= (4 * k + 3) * (4 * k + 4);
 
             }
 
@@ -121,13 +129,19 @@ namespace ExpIntegral {
                 return (MultiPrecision<N>.NaN, MultiPrecision<N>.NaN);
             }
 
-            MultiPrecision<N> cos = MultiPrecision<N>.Cos(x) / x;
-            MultiPrecision<N> sin = MultiPrecision<N>.Sin(x) / x;
+            MultiPrecision<N> f = p * v, g = q * v;
 
-            MultiPrecision<N> si = -cos * p - sin * q;
-            MultiPrecision<N> ci = sin * p - cos * q;
+            return (f, g);
+        }
 
-            return (si, ci);
+        public static (MultiPrecision<N> ci, MultiPrecision<N> si) Limit<N>(MultiPrecision<N> x, int max_terms = 256) where N : struct, IConstant {
+            MultiPrecision<N> cos = MultiPrecision<N>.Cos(x), sin = MultiPrecision<N>.Sin(x);
+            (MultiPrecision<N> f, MultiPrecision<N> g) = LimitFG(x, max_terms);
+
+            MultiPrecision<N> ci = f * sin - g * cos;
+            MultiPrecision<N> si = MultiPrecision<N>.PI / 2 - f * cos - g * sin;
+
+            return (ci, si);
         }
     }
 }

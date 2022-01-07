@@ -61,6 +61,10 @@ x_peak = 0.182092216206015142199130590408338051206853980486453959525149750563927
 
 ![cosintegral1](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/cosintegral1.svg)
 
+![sincosintegral0](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/sincosintegral0.svg)
+
+[NumericTable(128bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/cisi_table_n4.csv)  
+
 ### Series
 
 ![sinintegral2](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/sinintegral2.svg)
@@ -74,3 +78,8 @@ x_peak = 0.182092216206015142199130590408338051206853980486453959525149750563927
 ![sincosintegral3](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/sincosintegral3.svg)  
 ![sincosintegral4](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/sincosintegral4.svg)  
 ![sincosintegral5](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/sincosintegral5.svg)  
+
+![sincosintegral6](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/sincosintegral6.svg)  
+![sincosintegral7](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/sincosintegral7.svg)  
+
+[NumericTable(128bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/cisi_fg_n4.csv)  

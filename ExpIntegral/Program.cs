@@ -1,34 +1,31 @@
 ﻿using MultiPrecision;
 using System;
-using System.Collections.Generic;
 using System.IO;
 
 namespace ExpIntegral {
     internal class Program {
         static void Main(string[] args) {
 
-            for (MultiPrecision<Pow2.N4> x = 1d / 32; x <= 16; x += 1d / 32) {
-                MultiPrecision<Pow2.N4> y = SinCosIntegral.CosNearZero<Pow2.N4, Pow2.N8>(x);
+            using (StreamWriter sw = new("../../../../results/cisi_table_n4.csv")) {
+                sw.WriteLine("x,Ci,Si");
 
-                Console.WriteLine($"{x},{y}");
+                for (MultiPrecision<Pow2.N4> x = 0; x <= 256; x += 1 / 32d) {
+                    (MultiPrecision<Pow2.N4> ci, MultiPrecision<Pow2.N4> si) = SinCosIntegralN4.Value(x);
+
+                    sw.WriteLine($"{x},{ci},{si}");
+                    Console.WriteLine($"{x},{ci},{si}");
+                }
             }
 
-            for (MultiPrecision<Pow2.N4> x = 32; x <= 64; x += 1d / 32) {
-                MultiPrecision<Pow2.N4> y = SinCosIntegral.Limit(x).ci;
+            using (StreamWriter sw = new("../../../../results/cisi_fg_n4.csv")) {
+                sw.WriteLine("x,f,g");
 
-                Console.WriteLine($"{x},{y}");
-            }
+                for (MultiPrecision<Pow2.N4> x = 0; x <= 256; x += 1 / 32d) {
+                    (MultiPrecision<Pow2.N4> f, MultiPrecision<Pow2.N4> g) = SinCosIntegralN4.FG(x);
 
-            for (MultiPrecision<Pow2.N4> x = 1d / 32; x <= 16; x += 1d / 32) {
-                MultiPrecision<Pow2.N4> y = SinCosIntegral.SinNearZero<Pow2.N4, Pow2.N8>(x);
-
-                Console.WriteLine($"{x},{y}");
-            }
-
-            for (MultiPrecision<Pow2.N4> x = 32; x <= 64; x += 1d / 32) {
-                MultiPrecision<Pow2.N4> y = SinCosIntegral.Limit(x).si;
-
-                Console.WriteLine($"{x},{y}");
+                    sw.WriteLine($"{x},{f},{g}");
+                    Console.WriteLine($"{x},{f},{g}");
+                }
             }
 
             Console.WriteLine("END");
