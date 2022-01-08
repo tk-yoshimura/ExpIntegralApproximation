@@ -37,8 +37,8 @@ namespace ExpIntegral {
                 }
             }
                         
-            using (StreamWriter sw = new("../../../../results/cisi_log2log2_fg_pade_table.csv")) {
-                for (MultiPrecision<Pow2.N16> x = 1; x <= 8; x += 1) {
+            using (StreamWriter sw = new("../../../../results/cisi_log2log2_pade_table.csv")) {
+                for (MultiPrecision<Pow2.N16> x = 0; x <= 8; x += 1) {
 
                     bool is_e31 = false;
 
@@ -105,8 +105,6 @@ namespace ExpIntegral {
                             for (int i = 0; i <= n; i++) {
                                 sw.WriteLine($"f,{i},{fms[i]:e64},{fns[i]:e64}");
                             }
-
-                            sw.WriteLine($",i,p_i,q_i");
                             for (int i = 0; i <= n; i++) {
                                 sw.WriteLine($"g,{i},{gms[i]:e64},{gns[i]:e64}");
                             }
