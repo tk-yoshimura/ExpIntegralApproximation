@@ -72,6 +72,7 @@ x_peak = 0.182092216206015142199130590408338051206853980486453959525149750563927
 ### Table
 
 [NumericTable(128bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/cisi_table_n4.csv)  
+[NumericTable(256bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/cisi_table_n8.csv)  
 
 ### Limit
 
@@ -88,3 +89,4 @@ x_peak = 0.182092216206015142199130590408338051206853980486453959525149750563927
 ![sincosintegral7](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/sincosintegral7.svg)  
 
 [NumericTable(128bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/cisi_fg_n4.csv)  
+[NumericTable(256bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/cisi_fg_n8.csv)  
