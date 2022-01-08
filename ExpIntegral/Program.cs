@@ -6,10 +6,10 @@ namespace ExpIntegral {
     internal class Program {
         static void Main(string[] args) {
 
-            using (StreamWriter sw = new("../../../../results/cisi_table_N8.csv")) {
+            using (StreamWriter sw = new("../../../../results/cisi_table_n8.csv")) {
                 sw.WriteLine("x,Ci,Si");
 
-                for (MultiPrecision<Pow2.N8> x = 0; x <= 256; x += 1) {
+                for (MultiPrecision<Pow2.N8> x = 0; x <= 256; x += 1d / 32) {
                     (MultiPrecision<Pow2.N8> ci, MultiPrecision<Pow2.N8> si) = SinCosIntegralN8.Value(x);
 
                     sw.WriteLine($"{x},{ci},{si}");
@@ -17,10 +17,10 @@ namespace ExpIntegral {
                 }
             }
 
-            using (StreamWriter sw = new("../../../../results/cisi_fg_N8.csv")) {
+            using (StreamWriter sw = new("../../../../results/cisi_fg_n8.csv")) {
                 sw.WriteLine("x,f,g");
 
-                for (MultiPrecision<Pow2.N8> x = 0; x <= 256; x += 1) {
+                for (MultiPrecision<Pow2.N8> x = 0; x <= 256; x += 1d / 32) {
                     (MultiPrecision<Pow2.N8> f, MultiPrecision<Pow2.N8> g) = SinCosIntegralN8.FG(x);
 
                     sw.WriteLine($"{x},{f},{g}");
