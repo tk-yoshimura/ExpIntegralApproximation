@@ -38,7 +38,7 @@
 ![expintegral9](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/expintegral9.svg)  
 
 [NumericTable(128bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/ei_g_n4.csv)  
-[NumericTable(256bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/ei_g_n8.csv)  
+[NumericTable(256bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/ei_g_N8.csv)  
 
 ![expintegral11](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/figures/expintegral11.svg)  
 x_peak = 0.182092216206015142199130590408338051206853980486453959525149750563927500105...  
@@ -72,7 +72,7 @@ x_peak = 0.182092216206015142199130590408338051206853980486453959525149750563927
 ### Table
 
 [NumericTable(128bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/cisi_table_n4.csv)  
-[NumericTable(256bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/cisi_table_n8.csv)  
+[NumericTable(256bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/cisi_table_N8.csv)  
 
 ### Limit
 
