@@ -48,7 +48,7 @@ namespace ExpIntegral {
             }
         }
 
-        public static MultiPrecision<N> SinNearZero<N, M>(MultiPrecision<N> x, int max_terms = 512) where N : struct, IConstant where M : struct, IConstant {
+        public static MultiPrecision<N> SinNearZero<N, M>(MultiPrecision<N> x, bool offset, int max_terms = 512) where N : struct, IConstant where M : struct, IConstant {
             if (!(x >= 0)) {
                 throw new ArgumentOutOfRangeException(nameof(x));
             }
@@ -59,7 +59,7 @@ namespace ExpIntegral {
 
             MultiPrecision<M> x_ex = x.Convert<M>(), x2 = x_ex * x_ex, x4 = x2 * x2;
 
-            MultiPrecision<M> s = 0;
+            MultiPrecision<M> s = offset ? 0 : -MultiPrecision<M>.PI / 2;
             MultiPrecision<M> u = x_ex;
 
             long k = 0;
