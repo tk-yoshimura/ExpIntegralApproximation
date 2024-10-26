@@ -9,7 +9,7 @@ namespace ExpIntegral {
                 throw new ArgumentOutOfRangeException(nameof(x));
             }
 
-            if (x.IsZero) {
+            if (MultiPrecision<N>.IsZero(x)) {
                 return MultiPrecision<N>.NegativeInfinity;
             }
 
@@ -53,7 +53,7 @@ namespace ExpIntegral {
                 throw new ArgumentOutOfRangeException(nameof(x));
             }
 
-            if (x.IsZero) {
+            if (MultiPrecision<N>.IsZero(x)) {
                 return MultiPrecision<N>.Zero;
             }
 
@@ -79,7 +79,7 @@ namespace ExpIntegral {
                 s += ds;
                 u *= x4;
 
-                if (s.IsNaN || s.Exponent > MultiPrecision<M>.Bits - MultiPrecision<N>.Bits) {
+                if (MultiPrecision<M>.IsNaN(s) || s.Exponent > MultiPrecision<M>.Bits - MultiPrecision<N>.Bits) {
                     return MultiPrecision<N>.NaN;
                 }
             }
